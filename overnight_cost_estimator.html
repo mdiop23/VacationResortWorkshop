@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overnight Cost Estimator</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Clever Clover Hotel</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                  <a class="nav-link" href="./overnight-cost-estimator.html">Cost Calculator</a>
+                  <a class="nav-link" href="#">Flights</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    <main class="container">
+        <form class="p-4">
+            <h2 class="my-3">Overnight Cost Estimator</h2>
+            <div class="row my-3">
+                <div class="col-md-6">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" class="form-control" name="firstName">
+                </div>
+                <div class="col-md-6">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName"  class="form-control" name="lastName">
+                </div>
+            </div>
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-control" name="email">
+            <div class="row my-3">
+                <div class="col-md-6">
+                    <label for="checkInDate">Check-in Date</label>
+                    <input type="date" id="checkInDate" class="form-control" name="checkInDate">
+                </div>
+                <div class="col-md-6">
+                    <label for="numberOfNights">Number of Nights</label>
+                    <input type="number" id="numberOfNights" class="form-control" name="numberOfNights" min="1" max="28" required>
+                </div>
+            </div>
+            <fieldset>
+                <legend>Number of Guests</legend>
+                <label for="adultGuests">Adults</label>
+                <input type="number" id="adultGuests" class="form-control mb-3" name="adultsGuest" min="1" max="4" required>
+                <label for="childrenGuests">Children</label>
+                <input type="number" id="childrenGuests" class="form-control" name="childrenGuests" min="0" max="4" required>
+            </fieldset>
+            <div class="row my-3">
+                <fieldset class="col-md-6">
+                    <legend>Room Size</legend>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="queen" name="roomSize">
+                        <label class="form-check-label" for="queen">Queen</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="king" name="roomSize">
+                        <label class="form-check-label" for="king">King</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="suite" name="roomSize">
+                        <label class="form-check-label" for="suite">2 Bedroom Suite</label>
+                    </div>
+                </fieldset>
+                <fieldset class="col-md-6">
+                    <legend>Discount</legend>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="AAA" name="discount">
+                        <label class="form-check-label" for="AAA">AAA</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="military" name="discount">
+                        <label class="form-check-label" for="military">Military</label>
+                    </div>
+            </fieldset>
+            <div class="row my-3">
+                <button class="btn btn-primary col-md-2 mx-2 " type="button" id="costBtn" class="col-md-3 me-3">Estimate Cost</button>
+                <button class="btn btn-secondary col-md-2" type="button" id="resetBtn" class="col-md-3">Reset</button>
+            </div>
+            <!-- display the outputs -->
+            <div class="my-2">
+                <label for="originalRoomCost">Original Room Cost</label>
+                <input type="number" id="originalRoomCost" class="form-control" readonly>
+            </div>
+            <div class="my-2">
+                <label for="discountApplied">Discount</label>
+                <input type="text" id="discountApplied" class="form-control" readonly>
+            </div>
+            <div class="my-2">
+                <label for="discountedRoomCost">Discounted Room Cost</label>
+                <input type="number" id="discountedRoomCost" class="form-control" readonly>
+            </div>
+            <div class="my-2">
+                <label for="tax">Tax</label>
+                <input type="number" id="tax" class="form-control" readonly>
+            </div>
+            <div class="my-2">
+                <label for="totalCost">Total Stay Cost</label>
+                <input type="number" id="totalCost" class="form-control" readonly>
+            </div>
+        </form>
+    </main>
+
+    
+
+    <script src="./scripts/overnight-cost-estimator.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
